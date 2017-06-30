@@ -1,0 +1,10 @@
+server:
+  port: 5555
+zuul:
+  routes:
+    url-router:
+      path: /api-client/**
+      url: http://localhost:7005/
+    server-router:
+      path: /api-client-service/**
+      serviceId: consul-java-service

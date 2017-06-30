@@ -1,0 +1,3 @@
+FROM consul
+ENV CONSUL_BIND_INTERFACE=eth0 CONSUL_CLIENT_INTERFACE=eth0
+CMD ["agent", "-server", "-node=CONSUL-NODE-2", "-node-id=f97957bd-4939-425e-a89c-9f7770cb4873", "-join=CONSUL-NODE-1"]

@@ -1,0 +1,25 @@
+server:
+  port: 9000
+management:
+  security:
+    enabled: false
+spring:
+  application:
+    name: ribbon-consumer
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+EUREKA-CLIENT-1:
+  ribbon:
+    ConnectTimeout: 500
+    ReadTimeout: 1000
+    OkToRetryOnAllOperations: true
+    MaxAutoRetries: 1
+    MaxAutoRetriesNextSerer: 1
+feign:
+  hystrix:
+    enabled: true
+logging:
+  level:
+    com.thoughtworks.study.springcloudconfig.client.FeignUserResource: DEBUG

@@ -1,0 +1,6 @@
+server:
+  port: 9000
+debug: false
+management:
+  security:
+    enabled: false

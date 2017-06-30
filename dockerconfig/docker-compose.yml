@@ -1,0 +1,30 @@
+version: "2"
+services:
+  consul-node-1:
+    build: ./consul/consul-1
+    ports:
+      - 8300:8300
+      - 8301:8301
+      - 8302:8302
+      - 8500:8500
+      - 8600:8600
+  consul-node-2:
+    build: ./consul/consul-2
+    ports:
+      - 9230:8300
+      - 9231:8301
+      - 9232:8302
+      - 9250:8500
+      - 9260:8600
+    links:
+      - consul-node-1:CONSUL-NODE-1
+  consul-node-3:
+    build: ./consul/consul-3
+    ports:
+      - 9330:8300
+      - 9331:8301
+      - 9332:8302
+      - 9350:8500
+      - 9360:8600
+    links:
+      - consul-node-1:CONSUL-NODE-1
