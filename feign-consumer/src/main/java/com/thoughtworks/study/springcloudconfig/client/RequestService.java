@@ -15,7 +15,7 @@ public class RequestService {
 
     @HystrixCommand(fallbackMethod = "fallback"/*, commandProperties = @HystrixProperty(name="circuitBreaker.forceOpen", value = "true")*/)
     public String requestClient() {
-        ResponseEntity<String> forEntity = restTemplate.getForEntity("http://EUREKA-CLIENT-1", String.class);
+        ResponseEntity<String> forEntity = restTemplate.getForEntity("http://consul-java-service", String.class);
         String body = forEntity.getBody();
         return body;
     }

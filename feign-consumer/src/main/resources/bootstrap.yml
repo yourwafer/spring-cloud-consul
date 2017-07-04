@@ -1,6 +1,6 @@
 spring:
   application:
-    name: consul-java-consumer
+    name: consul-feign-consumer
   cloud:
     consul:
       host: localhost

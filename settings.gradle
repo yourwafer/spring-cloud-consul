@@ -1,3 +1,5 @@
-include 'consul-server'
+include 'consul-service'
 include 'ribbon-consumer'
 include 'zuul-center'
+include 'feign-consumer'
+include 'config-server'
